@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Code2, Users, Zap, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
+import { Code2, Users, Zap, BookOpen, ArrowRight, ChevronDown, Calculator } from "lucide-react";
 import { useState } from "react";
 
 export default function Services() {
@@ -9,6 +9,7 @@ export default function Services() {
     const services = [
       { name: "IT Solutions", href: "/services/it" },
       { name: "Manpower", href: "/services/manpower" },
+      { name: "Accounting & Tax", href: "/services/accounting" },
       { name: "Drone Services", href: "/drone-services" },
       { name: "Education", href: "/services/education" },
       { name: "Consulting", href: "/services/consulting" },
@@ -184,7 +185,68 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Service 3: Drone Services */}
+          {/* Service 3: Accounting & Tax Services */}
+          <div className="mb-20 pb-20 border-b border-gray-200">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-emerald-100 p-4 rounded-lg">
+                    <Calculator className="w-8 h-8 text-emerald-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-gray-900">Accounting & Tax Services</h2>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Professional CA services for GST, Income Tax, and complete financial compliance management.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <h3 className="text-xl font-semibold text-gray-900">Our CA Services:</h3>
+                  <ul className="space-y-3">
+                    <li className="flex gap-3">
+                      <span className="text-emerald-600 font-bold">₹</span>
+                      <div>
+                        <p className="font-semibold text-gray-900">GST Registration & Filing</p>
+                        <p className="text-gray-600 text-sm">Complete GST compliance and returns filing</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-emerald-600 font-bold">₹</span>
+                      <div>
+                        <p className="font-semibold text-gray-900">Income Tax Services</p>
+                        <p className="text-gray-600 text-sm">ITR filing, tax planning, and advisory</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-emerald-600 font-bold">₹</span>
+                      <div>
+                        <p className="font-semibold text-gray-900">PAN & Business Registration</p>
+                        <p className="text-gray-600 text-sm">PAN, TAN, and company incorporation services</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-emerald-600 font-bold">₹</span>
+                      <div>
+                        <p className="font-semibold text-gray-900">Audit & Bookkeeping</p>
+                        <p className="text-gray-600 text-sm">Professional audit and accounting services</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <Link
+                  to="/services/accounting"
+                  className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
+                >
+                  Learn More
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 h-96 rounded-2xl flex items-center justify-center">
+                <Calculator className="w-32 h-32 text-emerald-600/30" />
+              </div>
+            </div>
+          </div>
+
+          {/* Service 4: Drone Services */}
           <div className="mb-20 pb-20 border-b border-gray-200">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>

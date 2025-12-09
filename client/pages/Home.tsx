@@ -351,7 +351,7 @@ export default function Home() {
             {[
               { name: "Amrit Raj Sinha", role: "CEO & Founder", img: "/amrit raj.png" },
               { name: "Ravi Raushan", role: "CTO & CO-Founder", img: "/cto.jpg" },
-              { name: "Ankita", role: "HR Manager", img: "/girl.png" },
+              { name: "Kashish Thakur", role: "HR Manager", img: "/kasish thakur.jpeg" },
               { name: "Akshay Kumar", role: "Senior Developer", img: "/graffic designer.jpeg" },
               { name: "Amit Pathak", role: "Software Developer", img: "/amitpathak.jpeg" },
             ].map((member, index) => (

@@ -10,11 +10,14 @@ import {
   Instagram,
   Youtube,
   Linkedin,
+  Plus,
+  Minus,
 } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [showEnquiry, setShowEnquiry] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -27,12 +30,14 @@ export default function Navbar() {
     { name: "Services", href: "/services" },
     { name: "Drone Services", href: "/drone-services" },
     { name: "Our Team", href: "/team" },
+    { name: "Career", href: "/career" },
     { name: "Contact", href: "/contact" },
   ];
 
   const services = [
     { name: "IT Solutions", href: "/services/it" },
     { name: "Manpower", href: "/services/manpower" },
+    { name: "Accounting & Tax", href: "/services/accounting" },
     { name: "Drone Services", href: "/drone-services" },
     { name: "Education", href: "/services/education" },
     { name: "Consulting", href: "/services/consulting" },
@@ -84,9 +89,9 @@ export default function Navbar() {
                   target.src = "/netbrig-logo-placeholder.svg";
                 }}
                 alt="NETBRIG"
-                className="w-10 h-10 sm:w-16 sm:h-16 object-contain"
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
               />
-              <span className="font-bold text-xl text-gray-900 hidden sm:inline">
+              <span className="font-extrabold text-xl sm:text-2xl text-gray-900 inline">
                 NETBRIG
               </span>
             </Link>
@@ -146,12 +151,12 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors z-40"
+              className="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors z-40"
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
+                <X className="w-6 h-6 text-blue-600" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
+                <Menu className="w-6 h-6 text-blue-600" />
               )}
             </button>
           </div>
@@ -170,20 +175,35 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                 ) : (
-                  <div key={link.href} className="px-4 py-2">
-                    <div className="text-gray-800 font-medium mb-2">Services</div>
-                    <div className="pl-4">
-                      {services.map((s) => (
-                        <Link
-                          key={s.href}
-                          to={s.href}
-                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {s.name}
-                        </Link>
-                      ))}
-                    </div>
+                  <div key={link.href}>
+                    <button
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      className="w-full flex items-center justify-between px-4 py-2 text-gray-800 font-medium hover:bg-blue-50 transition-colors"
+                    >
+                      <span>Services</span>
+                      {mobileServicesOpen ? (
+                        <Minus className="w-5 h-5 text-gray-600" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-gray-600" />
+                      )}
+                    </button>
+                    {mobileServicesOpen && (
+                      <div className="pl-4 bg-gray-50">
+                        {services.map((s) => (
+                          <Link
+                            key={s.href}
+                            to={s.href}
+                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setMobileServicesOpen(false);
+                            }}
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )
               )}
@@ -280,6 +300,13 @@ export default function Navbar() {
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="IT Solutions">IT Solutions</option>
                 <option value="Manpower">Manpower</option>
+                <option value="Accounting & Tax Services">Accounting & Tax Services</option>
+                <option value="GST Registration">GST Registration</option>
+                <option value="Income Tax / ITR Filing">Income Tax / ITR Filing</option>
+                <option value="Company Registration">Company Registration</option>
+                <option value="Trademark Registration">Trademark Registration</option>
+                <option value="MSME Registration">MSME Registration</option>
+                <option value="Food License">Food License</option>
                 <option value="Drone Services">Drone Services</option>
                 <option value="Education Services">Education Services</option>
                 <option value="Partnership">Partnership</option>

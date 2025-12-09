@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import ITSolutions from "./pages/services/ITSolutions";
 import Manpower from "./pages/services/Manpower";
+import Accounting from "./pages/services/Accounting";
 import Education from "./pages/services/Education";
 import Consulting from "./pages/services/Consulting";
 import DroneServices from "./pages/DroneServices";
@@ -19,6 +20,7 @@ import Terms from "./pages/Terms";
 import Cookie from "./pages/Cookie";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
+import Career from "./pages/Career";
 import NotFound from "./pages/NotFound";
 import StickyButtons from "./StickyButtons/StickyButtons";
 
@@ -38,6 +40,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/services/it" element={<ITSolutions />} />
           <Route path="/services/manpower" element={<Manpower />} />
+          <Route path="/services/accounting" element={<Accounting />} />
           <Route path="/services/education" element={<Education />} />
           <Route path="/services/consulting" element={<Consulting />} />
           <Route path="/drone-services" element={<DroneServices />} />
@@ -46,6 +49,7 @@ const App = () => (
           <Route path="/cookie" element={<Cookie />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/career" element={<Career />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

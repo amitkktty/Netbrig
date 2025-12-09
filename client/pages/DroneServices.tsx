@@ -17,7 +17,7 @@ export default function DroneServices() {
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              NETBRIG Agriculture Drone Solutions
+              NETBRIG Agriculture Drone Services
             </h1>
             <p className="text-2xl text-purple-600 font-semibold mb-4">
               Advancing Farming with Precision

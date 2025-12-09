@@ -20,11 +20,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/netbring2.jpeg"
+                src="/netbriglogo.png"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement;
                   target.onerror = null;
-                  target.src = "/netbrig-logo-placeholder.svg";
+                  target.src = "/netbriglogo.png";
                 }}
                 alt="NETBRIG"
                 className="w-12 h-12 object-contain"
@@ -56,6 +56,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/drone-services" className="hover:text-white transition-colors">Drone Services</Link>
+              </li>
+              <li>
+                <Link to="/team" className="hover:text-white transition-colors">Our Team</Link>
+              </li>
+              <li>
+                <Link to="/career" className="hover:text-white transition-colors">Career</Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
